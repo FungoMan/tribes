@@ -1,0 +1,40 @@
+@use "styles/variables.scss" as *;
+
+.about_panel {
+  margin-top: 54px;
+  .container {
+    max-width: 800px;
+  }
+
+  .field {
+    margin-bottom: 54px;
+    font-size: $text-md;
+
+  }
+
+  .label {
+    font-weight: $font-semi-bold;
+    margin-bottom: 8px;
+  }
+
+  .value {
+    color: $bg-600;
+  }
+
+  .empty {
+    color: $primary-500;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: $tablet) {
+    .field {
+      margin-bottom: 32px;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    .field {
+      font-size: $text-sm;
+    }
+  }
+}

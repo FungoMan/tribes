@@ -1,0 +1,65 @@
+@import "styles/variables.scss";
+
+.article_card {
+  position: relative;
+  height: 350px;
+  overflow: auto;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border-radius: $border-radius;
+  width: 270px;
+  border: 1px solid $bg-50;
+
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+
+  .banner {
+    position: relative;
+    height: 60%;
+    img {
+      border-radius: $border-radius $border-radius 0 0;
+    }
+  }
+
+  .body {
+    background-color: white;
+    padding: 20px;
+    height: 40%;
+    border-radius: 0 0 $border-radius $border-radius;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+      font-weight: $font-semi-bold;
+      z-index: 10;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .time {
+      font-weight: $font-normal;
+      font-size: $text-sm;
+      color: $bg-400;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    height: 214px;
+    
+    .body {
+      padding: $p-sm;
+      .title {
+        font-size: $text-xs;
+      }
+      .time {
+        font-size: $text-2xs;
+      }
+    }
+  }
+}

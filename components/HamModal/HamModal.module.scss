@@ -1,0 +1,76 @@
+@import "styles/variables.scss";
+
+.category_item_icon {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("/images/auth-img.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  background-color: $orange-50;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &::after {
+    content: "Explore more with Tribes!";
+    font-weight: $font-bold;
+    font-size: $text-lg;
+    width: 40%;
+    text-align: center;
+    color: $orange-600;
+  }
+}
+
+.ham_modal {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 30px;
+
+  .logout {
+    color: $primary-500;
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  .user_profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .user_infor {
+      .name {
+        font-weight: $font-bold;
+      }
+      .see_profile {
+        color: $bg-400;
+        font-size: $text-sm;
+      }
+    }
+  }
+
+  .button_container {
+    margin-top: 90px;
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.avatar {
+  border-radius: 100%;
+}

@@ -1,0 +1,20 @@
+@import "./variables.scss";
+
+.listing_container {
+  background-image: url("/images/property_background.svg");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  height: max-content;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white !important;
+  path {
+    fill: white;
+  }
+}

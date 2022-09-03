@@ -1,0 +1,32 @@
+@import "styles/variables.scss";
+
+.apply_btn {
+  width: 60px;
+}
+
+.option_container {
+  margin-top: 10px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  height: 340px;
+  gap: 20px;
+}
+
+.reset_btn {
+  cursor: pointer;
+  padding-left: 10px;
+  display: flex;
+  font-weight: $font-semi-bold;
+  align-items: center;
+  color: $bg-700;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: $mobile) {
+  .option_container {
+    height: 360px;
+    padding: 0 10px;
+  }
+}

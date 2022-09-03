@@ -1,0 +1,219 @@
+@use "styles/variables.scss" as *;
+
+.review {
+  &_completed {
+    position: relative;
+    display: flex;
+    &:not(:last-child) {
+      margin-bottom: 40px;
+
+      &.divider {
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          border-bottom: 1px solid $bg-100;
+        }
+      }
+    }
+
+    .group_heading {
+      max-width: 40%;
+      width: auto;
+      display: flex;
+      align-items: flex-start;
+      .header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+
+    .children {
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    .censored_status {
+      margin-top: 16px;
+      font-size: $text-sm;
+
+      &_approved {
+        display: flex;
+        align-items: center;
+        color: $bg-500;
+      }
+
+      &_denied {
+        color: $blue-600;
+        font-weight: $font-normal;
+      }
+    }
+
+    .name {
+      font-size: $text-sm;
+      font-weight: $font-bold;
+      color: $bg-700;
+    }
+
+    .status_date {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      font-size: $text-sm;
+
+      .date {
+        color: $bg-400;
+        margin-left: 16px;
+      }
+
+      .status {
+        text-transform: capitalize;
+        font-weight: $font-normal;
+        height: 22px;
+        padding: 0 12px;
+        border-radius: 24px;
+
+        &.pending {
+          background-color: $yellow-100;
+          color: $yellow-700;
+        }
+        &.approved {
+          background-color: $green-50;
+          color: $green-600;
+        }
+        &.denied {
+          background-color: $primary-50;
+          color: $primary-500;
+        }
+      }
+    }
+  }
+
+  &_avatar {
+    min-width: 56px;
+    max-width: 56px;
+    height: 56px;
+    margin-right: 16px;
+  }
+
+  &_summary {
+    margin-top: 0;
+    flex: 1;
+
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .name {
+      font-size: $text-md;
+      font-weight: $font-bold;
+      color: $bg-700;
+    }
+
+    .rating {
+      &_group {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      &_type {
+        font-size: $text-sm;
+        color: $bg-600;
+        font-weight: $font-bold;
+        margin-left: 16px;
+        margin-bottom: 12px;
+      }
+    }
+
+    .content {
+      font-size: $text-sm;
+      color: $bg-500;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .image {
+      &_list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+      &_item {
+        margin-right: 17px;
+      }
+    }
+
+    .date_visit {
+      font-size: $text-sm;
+    }
+
+    .reply_review {
+      padding: 12px 12px 12px 16px;
+      background-color: $bg-50;
+      border-radius: 8px;
+      font-size: $text-sm;
+      .head_review {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 2px;
+        .title {
+          color: $bg-600;
+          font-weight: $font-bold;
+        }
+
+        .time_date {
+          color: $bg-400;
+        }
+      }
+
+      .description_review {
+        color: $bg-500;
+        white-space: pre-wrap;
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_completed {
+      .group_heading {
+        .header {
+          width: 100%;
+        }
+      }
+      .name {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      .status_date {
+        .status {
+          display: none;
+        }
+        .date {
+          font-size: $text-xs;
+          margin-left: 0;
+        }
+      }
+      .censored_status {
+        font-size: $text-xs;
+      }
+    }
+    &_avatar {
+      min-width: 40px;
+      max-width: 40px;
+      height: 40px;
+    }
+    &_summary {
+      margin-top: 0;
+      padding-left: 0;
+    }
+  }
+}

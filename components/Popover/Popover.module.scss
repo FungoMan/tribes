@@ -1,0 +1,84 @@
+@import "styles/variables.scss";
+
+.popover {
+  position: relative;
+
+  .children {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: fit-content;
+  }
+
+  .content_container {
+    position: absolute;
+    box-sizing: border-box;
+
+    width: fit-content;
+    min-width: 100px;
+    background-color: white;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    transition: max-height 0.6s ease-in-out;
+    max-height: 0;
+    font-size: $text-sm;
+    overflow: hidden;
+    z-index: 1;
+
+    .content {
+      padding: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 80vh;
+      overflow-y: auto;
+      overscroll-behavior: none;
+    }
+
+    &.show {
+      max-height: 90vh;
+    }
+
+    & > div > div {
+      cursor: pointer;
+      padding: 8px;
+      line-height: 1;
+      border-radius: $border-radius;
+      width: max-content;
+      min-width: 100%;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      &:hover {
+        background-color: $primary-20;
+      }
+    }
+
+    &.top-right {
+      left: 0;
+    }
+
+    &.top {
+      top: unset;
+      bottom: calc(100% + 20px);
+    }
+
+    &.top-left {
+      right: 0;
+    }
+
+    &.bottom-right {
+      left: 0;
+      top: calc(100% + 10px);
+    }
+
+    &.bottom-left {
+      right: 0;
+      top: calc(100% + 10px);
+    }
+  }
+}

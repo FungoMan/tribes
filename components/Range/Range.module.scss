@@ -1,0 +1,95 @@
+@import "styles/variables.scss";
+
+$trach-height: 2px;
+
+.container {
+  width: 100%;
+  display: flex;
+
+  .slider {
+    position: relative;
+    width: 450px;
+    &__range,
+    &__track {
+      position: absolute;
+      top: 2px;
+      width: 100%;
+      border-radius: 3px;
+      height: $trach-height;
+    }
+
+    &__track {
+      background-color: $primary-100;
+      z-index: 1;
+    }
+
+    &__range {
+      background-color: $primary-500;
+      z-index: 2;
+    }
+  }
+
+  .thumb {
+    pointer-events: none;
+    position: absolute;
+    height: 0;
+    width: 450px;
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* For Chrome browsers */
+    &::-webkit-slider-thumb {
+      background-color: white;
+      border: 1px solid $primary-500;
+      border-radius: 50%;
+      cursor: pointer;
+      height: 18px;
+      width: 18px;
+      margin-top: 4px;
+      pointer-events: all;
+      position: relative;
+    }
+
+    /* For Firefox browsers */
+    &::-moz-range-thumb {
+      background-color: white;
+      border: 1px solid $primary-500;
+      border-radius: 50%;
+      cursor: pointer;
+      height: 18px;
+      width: 18px;
+      margin-top: 4px;
+      pointer-events: all;
+      position: relative;
+    }
+
+    &__zindex_3 {
+      z-index: 3;
+    }
+
+    &__zindex_4 {
+      z-index: 4;
+    }
+
+    &__zindex_5 {
+      z-index: 5;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .container {
+    .slider {
+      width: 220px;
+    }
+    .thumb {
+      width: 220px;
+    }
+  }
+} ;

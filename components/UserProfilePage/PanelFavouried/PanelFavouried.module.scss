@@ -1,0 +1,41 @@
+@use "styles/variables.scss" as *;
+
+.favouried {
+  &_panel {
+    position: relative;
+
+    .total {
+      position: absolute;
+      top: 10px;
+      right: 0;
+    }
+  }
+
+  &_tab {
+    margin-top: 26px;
+    margin-bottom: 40px;
+    max-width: calc(100% - 85px);
+  }
+
+  @media screen and (max-width: $tablet) {
+    &_tab {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_panel {
+      .total {
+        right: unset;
+        left: 0;
+        top: 45px;
+        font-size: $text-xs;
+        font-weight: $font-semi-bold;
+      }
+    }
+    &_tab {
+      margin-bottom: 45px;
+      max-width: 100%;
+    }
+  }
+}

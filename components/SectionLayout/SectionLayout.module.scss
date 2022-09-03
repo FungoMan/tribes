@@ -1,0 +1,132 @@
+@import "styles/variables.scss";
+
+.section_layout {
+  width: 100%;
+  padding: 27px 0;
+  z-index: 1;
+  background-color: white;
+
+  &.special {
+    .container {
+      width: 90%;
+    }
+  }
+
+  .container {
+    margin: auto;
+    width: $content-width;
+    max-width: $content-max-width;
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      gap: 50px;
+
+      .title_container {
+        .title {
+          font-size: $text-xl;
+          font-weight: $font-bold;
+        }
+
+        .sub_title {
+          margin-top: 8px;
+          font-weight: $font-light;
+          font-size: $text-sm;
+          color: $bg-500;
+        }
+      }
+
+      .wrapper_seemore {
+        display: flex;
+        align-items: center;
+        width: max-content;
+        .see_more {
+          font-size: $text-sm;
+          font-weight: $font-bold;
+          color: $primary-500;
+          width: max-content;
+          cursor: pointer;
+        }
+
+        &:hover {
+          .icon_seemore {
+            transform: translateX(3px);
+            transition: 0.3s;
+          }
+        }
+
+        .icon_seemore {
+          margin-left: 3px;
+        }
+      }
+
+      .children {
+        width: 100%;
+      }
+    }
+  }
+
+  &.colored_background {
+    background-color: $bg-50;
+  }
+
+  &.transparent {
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .section_layout {
+    .container {
+      width: 82%;
+    }
+  }
+}
+
+@media screen and (max-width: $small-mobile) {
+  .section_layout {
+    .container {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: $medium-mobile) {
+  .section_layout {
+    .container {
+      width: 90%;
+      .row {
+        .title_container {
+          .title {
+            font-size: $text-lg;
+          }
+        }
+
+        .wrapper_seemore {
+          .see_more {
+            font-size: $text-xs;
+          }
+        }
+      }
+
+      .children {
+        justify-content: space-around;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $small-mobile) {
+  .section_layout {
+    .container {
+      width: 100%;
+      padding: 0 5px;
+      .children {
+        justify-content: space-around;
+      }
+    }
+  }
+}

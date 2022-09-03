@@ -1,0 +1,35 @@
+@use "styles/variables.scss" as *;
+
+.share_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  row-gap: 30px;
+  padding: 30px;
+  border-top: 1px solid $bg-100;
+
+  .social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary-500;
+    }
+
+    .icon {
+      position: relative;
+      height: 50px;
+      width: 50px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: $box-shadow;
+      border-radius: 50%;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@import "styles/variables.scss";
+
+.collection_card {
+  position: relative;
+  overflow: auto;
+  height: 100%;
+  border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  img {
+    border-radius: $border-radius;
+  }
+
+  &:hover {
+    box-shadow: $box-shadow;
+  }
+
+  .title {
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    color: white;
+    font-weight: $font-semi-bold;
+    z-index: 10;
+  }
+
+  .skeleton {
+    display: block;
+    height: 350px;
+    width: 270px;
+  }
+}
+
+// @media screen and (max-width: $big-tablet) {
+//   .collection_card {
+//     height: 300px;
+//   }
+// }
+
+@media screen and (max-width: $tablet) {
+  // .collection_card {
+  //   height: 340px;
+  // }
+}
+
+@media screen and (max-width: $small-tablet) {
+  .collection_card {
+    .title {
+      left: 26%;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  // .collection_card {
+  //   height: 340px;
+  // }
+
+  .collection_card {
+    .title {
+      left: 15%;
+    }
+  }
+}

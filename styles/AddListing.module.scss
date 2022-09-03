@@ -1,0 +1,16 @@
+@import "styles/variables.scss";
+
+.add_listing {
+  p {
+    color: $bg-500;
+    font-size: $text-sm;
+    margin: 10px 0 0 0;
+  }
+
+  a {
+    color: $blue-500;
+    text-decoration: underline;
+    font-size: $text-sm;
+    cursor: pointer;
+  }
+}

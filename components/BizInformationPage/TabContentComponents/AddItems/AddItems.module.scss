@@ -1,0 +1,28 @@
+@import "styles/variables.scss";
+
+.add_items_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    .close {
+      font-size: 30px;
+      font-weight: $font-light;
+      height: min-content;
+      cursor: pointer;
+    }
+  }
+}
+
+.upload {
+  border: 2px dashed $bg-100;
+  border-radius: $border-radius;
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+}

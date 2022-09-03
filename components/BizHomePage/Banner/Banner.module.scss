@@ -1,0 +1,28 @@
+@import "styles/variables.scss";
+.mobile_banner {
+  display: none;
+  &_card {
+    video {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .mobile_banner {
+    display: block;
+    &_card {
+      display: flex;
+      position: relative;
+      object-fit: contain;
+      height: 300px;
+      width: 100%;
+      background-color: black;
+      justify-content: center;
+    }
+  }
+  .banner {
+    display: none;
+  }
+}

@@ -1,0 +1,70 @@
+@use "styles/variables.scss" as *;
+
+.divider_section {
+  position: relative;
+  background-color: $primary-500;
+  border-radius: 50px;
+  overflow: hidden;
+
+  &.color {
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 45px;
+    background: url("/images/vector-sun.svg") no-repeat center;
+    background-size: contain;
+    width: 145px;
+    height: 52px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(6px, -50%);
+    background: url("/images/vector-list-rhombus.svg") no-repeat center;
+    background-size: contain;
+    width: 111px;
+    height: 37px;
+  }
+
+  &_title {
+    color: $bg-0;
+    padding: $p-lg;
+    font-size: 28px;
+    line-height: $line-height;
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    &::before {
+      top: unset;
+      left: 0;
+      bottom: 0;
+      width: 42px;
+      height: 23px;
+      background: url("/images/vector-sun-sm.svg") no-repeat center;
+    }
+    &::after {
+      width: 40px;
+    }
+    &_title {
+      font-size: $text-xl;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    &_title {
+      font-size: $text-lg;
+    }
+  }
+}

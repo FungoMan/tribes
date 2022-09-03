@@ -1,0 +1,41 @@
+@import "styles/variables.scss";
+
+.preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  &_value {
+    font-weight: $font-light;
+  }
+
+  &_value_badge {
+    font-weight: $font-light;
+    padding: 10 6px;
+    height: 30px;
+    background-color: $bg-50;
+    color: $bg-600;
+    border: none;
+  }
+}
+
+.open_hours_container {
+  display: flex;
+  gap: 20px;
+  row-gap: 20px;
+  .day_name {
+    width: 30%;
+    max-width: 150px;
+    font-weight: $font-normal;
+  }
+  .open_hour {
+    font-weight: $font-light;
+  }
+}
+
+@media screen and (max-width: $small-tablet){
+  .open_hours_container {
+    gap: unset;
+    justify-content: space-between;
+  }
+}

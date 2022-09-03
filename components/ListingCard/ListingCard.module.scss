@@ -1,0 +1,99 @@
+@import "styles/variables.scss";
+
+.add_listing_card {
+  display: flex;
+  gap: 30px;
+  border: 1px solid $bg-100;
+  border-radius: $border-radius;
+  padding: 24px 25px;
+  position: relative;
+  background-color: white;
+
+  .left_col {
+    width: 60%;
+
+    .listing_details {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      padding-bottom: 15px;
+      border-bottom: 1px solid $bg-50;
+
+      &_avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      &_infor {
+        &_name {
+          font-weight: $font-semi-bold;
+          color: $bg-600;
+        }
+
+        &_location {
+          font-size: $text-sm;
+          font-weight: $font-normal;
+          color: $bg-400;
+        }
+      }
+    }
+
+    .listing_number {
+      display: flex;
+      gap: 20px;
+      font-size: $text-sm;
+      color: $bg-400;
+
+      p {
+        font-size: $text-lg;
+        font-weight: $font-semi-bold;
+        color: $bg-600;
+        text-align: center;
+      }
+    }
+  }
+  .right_col {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    span {
+      text-decoration: underline;
+      font-size: $text-sm;
+      color: $bg-400;
+      cursor: pointer;
+
+      &:hover {
+        color: $bg-600;
+      }
+    }
+  }
+
+  .close {
+    font-size: 25px;
+    font-weight: 100;
+    color: $bg-600;
+    position: absolute;
+    top: 0;
+    right: 16px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .add_listing_card {
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    .left_col,
+    .right_col {
+      width: 100%;
+    }
+  }
+}

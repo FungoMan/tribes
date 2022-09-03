@@ -1,0 +1,140 @@
+@import "./variables.scss";
+
+.biz_verify {
+  min-height: calc(100vh - $desktop-header-height);
+  height: max-content;
+  width: 100vw;
+  background-color: $orange-50;
+  background-image: url("/images/auth-img.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  padding: 40px 0;
+  overflow-y: scroll;
+
+  p {
+    text-align: center;
+    color: $bg-400;
+    font-weight: $font-light;
+    font-size: $text-sm;
+  }
+
+  .form {
+    height: 100%;
+    width: 600px;
+    margin: auto;
+    padding: 30px 50px;
+    background-color: white;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    overflow-y: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    label {
+      color: $bg-400;
+      font-size: $text-sm;
+    }
+
+    .field_group {
+      width: 100%;
+    }
+
+    .upload_id {
+      border: 2px dashed $bg-100;
+      border-radius: $border-radius;
+      width: 50%;
+      height: fit-content;
+    }
+
+    .time {
+      color: $bg-600;
+    }
+
+    .header {
+      text-align: center;
+      font-weight: $font-bold;
+      font-size: $text-lg;
+    }
+
+    .price_container {
+      background-color: $blue-100;
+      border-radius: $border-radius;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .amount {
+        font-size: $text-md;
+      }
+
+      .price {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: $blue-500;
+        font-weight: $font-bold;
+        font-size: $text-lg;
+      }
+    }
+
+    .payment_container {
+      display: flex;
+      gap: 16px;
+
+      .payment {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        border-radius: $border-radius;
+        background-color: white;
+        box-shadow: $box-shadow;
+        font-size: $text-sm;
+        cursor: pointer;
+
+        &.selected {
+          border: 1px solid $blue-500;
+        }
+      }
+    }
+  }
+  .modal {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background-color: white;
+    margin: auto 10px;
+    border-radius: $border-radius;
+    .header {
+      font-weight: $font-bold;
+      font-size: $text-lg;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .biz_verify {
+    height: max-content;
+    min-height: calc(100vh - $mobile-header-height);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+
+    .form {
+      padding: 16px;
+      width: 90%;
+      box-shadow: none;
+    }
+  }
+}

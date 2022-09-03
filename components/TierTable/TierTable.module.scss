@@ -1,0 +1,170 @@
+@import "styles/variables.scss";
+
+.tier_desktop {
+  overflow: auto;
+}
+
+.tier {
+  .recommended {
+    position: absolute;
+    top: -26px;
+    right: 10px;
+    height: 26px;
+    overflow: hidden;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  &_mobile {
+    display: none;
+  }
+
+  a {
+    color: #3faeff;
+    font-size: $text-md;
+    font-weight: $font-light;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  td,
+  th {
+    padding: 16px 30px;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid $bg-100;
+    &:first-child {
+      width: auto;
+      border-left: none;
+    }
+  }
+
+  td {
+    color: $bg-700;
+    font-size: $text-md;
+  }
+
+  &_name {
+    color: $bg-500;
+    font-size: $text-md;
+  }
+
+  &_price {
+    margin-bottom: 10px;
+    font-size: $text-lg;
+
+    span {
+      font-weight: $font-light;
+      color: $bg-400;
+      font-size: $text-md;
+    }
+  }
+
+  &_payment {
+    width: auto;
+    font-size: $text-md;
+    font-weight: normal;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    border-bottom: none !important;
+    border-right: none !important;
+  }
+
+  &_feature {
+    width: 100%;
+    color: $bg-700;
+    font-size: $text-md;
+    font-weight: $font-bold;
+  }
+}
+
+.feature {
+  background-color: #3faeff;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+}
+
+@media screen and (max-width: $mobile) {
+  .tier {
+    table {
+      display: none;
+    }
+
+    &_mobile {
+      display: block;
+      span {
+        width: fit-content;
+      }
+
+      &_card {
+        z-index: 2;
+        background-color: $bg-50;
+        border-radius: $border-radius;
+
+        .body {
+          padding: 20px;
+
+          .name {
+            color: $bg-700;
+            font-size: $text-md;
+            font-weight: $font-bold;
+            height: 100%;
+          }
+
+          span {
+            font-weight: $font-light;
+            color: $bg-400;
+            font-size: $text-xs;
+          }
+        }
+
+        .features {
+          position: relative;
+          border-top: 1px solid $bg-100;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          color: $bg-600;
+          font-size: $text-sm;
+          color: $bg-600;
+
+          .feature {
+            color: $bg-600;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            width: max-content;
+            background-color: transparent;
+          }
+
+          &.no_provided {
+            text-decoration: line-through;
+            color: $bg-400;
+          }
+        }
+      }
+
+      .price {
+        font-weight: $font-bold;
+        color: $bg-700;
+        font-size: $text-lg;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+      }
+
+      .button_container {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        border-top: 1px solid $bg-100;
+      }
+    }
+  }
+}

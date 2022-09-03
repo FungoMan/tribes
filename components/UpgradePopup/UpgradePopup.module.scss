@@ -1,0 +1,12 @@
+@import "styles/variables.scss";
+
+.free_deals_popover {
+  color: white;
+  font-weight: $font-semi-bold;
+  background-color: $bg-400 !important;
+  &:hover {
+    div {
+      background-color: $bg-400 !important;
+    }
+  }
+}

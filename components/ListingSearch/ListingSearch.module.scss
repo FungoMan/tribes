@@ -1,0 +1,15 @@
+@import "styles/variables.scss";
+
+.add_listing_search {
+  &_footer {
+    background-color: $bg-50;
+    padding: 10px 20px;
+    font-size: $text-md;
+    font-weight: $font-semi-bold;
+    p {
+      color: $blue-500;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}

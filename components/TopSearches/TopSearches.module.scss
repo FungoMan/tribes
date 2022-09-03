@@ -1,0 +1,35 @@
+@use "/styles/variables.scss" as *;
+
+.top_search {
+  &_label {
+    font-size: $text-md;
+    font-weight: $font-semi-bold;
+    color: $bg-600;
+    margin-bottom: 3px;
+  }
+
+  &_list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &_item {
+    &:not(:last-child) {
+      .divider {
+        visibility: visible;
+      }
+    }
+  }
+
+  &_keyword {
+    font-size: $text-xs;
+    color: $primary-500;
+  }
+
+  .divider {
+    visibility: hidden;
+    font-size: $text-xs;
+    color: $bg-200;
+    margin: 0 10px;
+  }
+}

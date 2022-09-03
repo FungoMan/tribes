@@ -1,0 +1,67 @@
+@import "styles/variables.scss";
+
+.selected_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+  row-gap: 20px;
+  padding: 0 30px;
+  width: 100%;
+}
+
+.tags_selection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+  row-gap: 20px;
+  padding: 30px;
+}
+
+.action_container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 0 30px 20px 0;
+}
+
+.tag {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  &::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    border: 2px solid $bg-100;
+    border-radius: 4px;
+    display: grid;
+    place-content: center;
+    flex: 0 0 24px;
+    box-sizing: border-box;
+
+    background: $primary-500;
+    border: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 6px;
+    display: inline-block;
+    height: 12px;
+    width: 6px;
+    margin-left: 0;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+
+    transition: 120ms transform ease-in-out;
+
+    transform: rotate(45deg) !important;
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: $mobile) {
+}

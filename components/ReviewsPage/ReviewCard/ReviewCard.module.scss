@@ -1,0 +1,123 @@
+@use "styles/variables.scss" as *;
+
+.review {
+  &_card {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    .verified {
+      position: absolute;
+      z-index: 1;
+      top: 8px;
+      left: -10px;
+
+      &_icon {
+        height: 20px;
+        width: 64px;
+      }
+    }
+
+    .featured_image {
+      position: relative;
+      height: 124px;
+      min-width: 220px;
+      max-width: 220px;
+      margin-right: 24px;
+    }
+
+    .title {
+      font-size: $text-md + 2px;
+      font-weight: $font-bold;
+      color: $bg-600;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+
+    .location {
+      font-size: $text-sm;
+      font-weight: $font-light;
+      margin-bottom: 18px;
+    }
+
+    .display_mobile {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $medium-tablet) {
+    &_card {
+      flex-wrap: wrap;
+
+      .display_desktop {
+        display: none;
+      }
+      .display_mobile {
+        display: block;
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_card {
+      .featured_image {
+        max-width: 119px;
+        min-width: 119px;
+        height: 68px;
+        margin-right: 10px;
+      }
+
+      .title {
+        font-size: $text-sm;
+        margin-bottom: 8px;
+      }
+
+      .location {
+        font-size: $text-xs;
+      }
+    }
+  }
+}
+
+/* Start Style ReviewForm Component*/
+.cta {
+  &_group {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  &_click {
+    color: $primary-500;
+    font-size: $text-md;
+    font-weight: $font-semi-bold;
+    margin-left: 23px;
+  }
+}
+
+.form {
+  &_group {
+    margin-bottom: 32px;
+  }
+  &_label {
+    font-size: $text-sm;
+    color: $bg-400;
+    font-weight: $font-semi-bold;
+  }
+}
+@media screen and (max-width: $mobile) {
+  .cta {
+    &_click {
+      font-size: $text-sm;
+    }
+  }
+  .form {
+    &_group {
+      margin-bottom: 20px;
+    }
+  }
+  .btn_submit {
+    width: 100% !important;
+  }
+}
+/* End Style ReviewForm Component*/

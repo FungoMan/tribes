@@ -1,0 +1,54 @@
+@import "styles/variables.scss";
+
+.checkbox {
+  display: flex;
+  gap: 16px;
+
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    cursor: pointer;
+    // width: 24px;
+    height: 24px;
+    border: 2px solid $bg-100;
+    border-radius: 4px;
+    display: grid;
+    place-content: center;
+    flex: 0 0 24px;
+    box-sizing: border-box;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 12px;
+      width: 6px;
+      margin-left: 0;
+      border-bottom: 3px solid white;
+      border-right: 3px solid white;
+
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+    }
+
+    &:checked::before {
+      transform: rotate(45deg) !important;
+      transform: scale(1);
+    }
+
+    &:checked {
+      background: $primary-500;
+      border: none;
+    }
+  }
+
+  label {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    font-size: $text-md;
+    overflow-x: auto;
+    cursor: pointer;
+  }
+}

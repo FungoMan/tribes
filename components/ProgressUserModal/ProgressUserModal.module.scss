@@ -1,0 +1,144 @@
+@use "styles/variables.scss" as *;
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+
+  .title {
+    position: relative;
+    z-index: 2;
+    color: $dark-0;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: $font-bold;
+    margin-bottom: 24px;
+  }
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  top: 22px;
+  right: 22px;
+}
+
+.button {
+  width: 122px;
+
+  &.small {
+    text-decoration: underline;
+  }
+}
+
+.left {
+  width: 50%;
+  padding: 35px;
+  background-color: $blue-50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 354px;
+    height: 325px;
+    background-image: url("../../public/images/bg-modal-progress-user.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+  }
+
+  .progress {
+    position: relative;
+    z-index: 2;
+    padding: 0;
+    margin-bottom: 100px;
+  }
+}
+
+.right {
+  width: 50%;
+  padding: 31px 24px 16px 24px;  
+
+  .text {
+    font-size: $text-sm;
+    line-height: 22px;
+    color: $bg-600;
+
+    &.content {
+      margin-bottom: 26px; 
+      max-width: 90%;
+    }
+
+    &.item {
+      color: $blue-600;
+      font-weight: $font-normal;
+      cursor: pointer;
+      &:not(:last-of-type) { 
+        margin-bottom: 20px;
+      }
+
+      &.checked {
+        color: $bg-300;
+        text-decoration-line: line-through;
+      }
+    }
+  }
+} 
+
+.break {
+  margin-top: 55px;
+  margin-bottom: 16px;
+}
+
+@media screen and (max-width: $medium-tablet) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left {
+    padding: 25px;
+    width: 100%;
+    &::after {
+      display: none;
+    }
+
+    .progress {
+      margin-bottom: 0px;
+    }
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .break {
+    margin-top: 35px;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .container {
+    .title {
+      margin-bottom: 15px;
+    }
+  }
+
+  .left {
+    padding: 17px;
+  }
+   
+  .right {
+    .text {
+      &.content {
+        margin-bottom: 15px; 
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+@use "styles/variables" as *;
+
+.tab {
+  &_container {
+    display: flex;
+    margin-bottom: 10px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &_nav {
+    position: relative;
+    font-size: $text-md;
+    font-weight: $font-normal;
+    color: $bg-300;
+    margin-right: 30px;
+    padding-bottom: 4px;
+    cursor: pointer;
+    font-weight: $font-semi-bold;
+    white-space: nowrap;
+
+    &.secondary_outline {
+      padding: 7px 24px;
+      border-radius: $border-radius;
+      border: 1px solid transparent;
+
+      &.selected {
+        border: 1px solid $bg-500;
+        background-color: $bg-100;
+        color: $bg-500;
+      }
+    }
+    &.secondary_no_outline {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 4px;
+        background-color: $bg-600;
+        border-radius: 24px;
+        transition: width 0.3s ease;
+      }
+
+      &.selected {
+        color: $bg-600;
+        &::before {
+          width: 60px;
+        }
+      }
+    }
+
+    &.primary_outline {
+      @extend .secondary_outline;
+
+      &.selected {
+        border-color: $primary-300;
+        background-color: $primary-20;
+        color: $primary-500;
+      }
+    }
+    &.primary_no_outline {
+      @extend .secondary_no_outline;
+      &::before {
+        background-color: $primary-500;
+      }
+      &.selected,
+      &:hover {
+        color: $primary-500;
+      }
+    }
+  }
+
+  @media screen and (max-width: $big-tablet) {
+    &_nav {
+      &.secondary_no_outline {
+        &::before {
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    &_container {
+      overflow-x: auto;
+    }
+    &_nav {
+      margin-right: 15px !important;
+      &.secondary_outline {
+        margin-right: 30px !important;
+      }
+      &.secondary_no_outline {
+        &::before {
+          bottom: 0;
+          left: 0;
+          transform: translateX(0);
+        }
+        &.selected {
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile) {
+    &_nav {
+      margin-right: 16px;
+      font-size: $text-xs;
+      margin-right: 35px !important;
+      font-size: $text-sm;
+      margin-right: 20px !important;
+
+      &.secondary_outline {
+        margin-right: 10px !important;
+      }
+    }
+  }
+}

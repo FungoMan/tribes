@@ -1,0 +1,28 @@
+@use "styles/variables.scss" as *;
+
+.container {
+  position: relative;
+  background-color: $bg-50;
+  padding-top: 360px;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@media screen and (max-width: $big-tablet) {
+  .container {
+    padding-top: 260px;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .container {
+    padding-top: 96px;
+  }
+}

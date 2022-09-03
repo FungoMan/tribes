@@ -1,0 +1,72 @@
+@use "styles/variables.scss"as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 23px 0 32px;
+
+  .title {
+    font-weight: $font-bold;
+    font-size: $text-lg;
+    color: $bg-700;
+  }
+
+  .close {
+    @extend .title;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+}
+
+.option {
+  margin-bottom: 18px;
+  &s {
+    padding: 0 32px;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px 24px;
+
+  .btn_submit {
+    font-size: $text-sm;
+  }
+  .btn_cancel {
+    @extend .btn_submit;
+    text-decoration: none;
+    padding-left: 0;
+    max-width: max-content;
+    min-width: auto;
+    color: $bg-600;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .header {
+    padding: 16px 16px 0 16px;
+  }
+
+  .option {
+    &s {
+      padding: 0 16px;
+    }
+  }
+  
+  .footer {
+    border-top: 1px solid $bg-100;
+    margin-top: 16px;
+    padding: 16px 16px 24px;
+
+    .btn_cancel {
+      font-size: $text-sm;
+      text-decoration: underline;
+    }
+    .btn_submit {
+      font-size: $text-sm;
+      width: max-content !important;
+    }
+  }
+}

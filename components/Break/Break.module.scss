@@ -1,0 +1,13 @@
+@import "styles/variables.scss";
+
+.break {
+  margin: 20px 0;
+  height: 1px;
+  width: 100%;
+  background-color: $bg-100;
+}
+
+.no_border {
+  height: 0;
+  margin: 40px 0;
+}

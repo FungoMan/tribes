@@ -1,0 +1,56 @@
+@import "styles/variables.scss";
+
+.heading {
+  font-weight: $font-bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.5s;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 23px;
+    width: 3px;
+    transition: all 0.5s;
+    margin-right: 4px;
+    background-color: $primary-300;
+    border-radius: $border-radius;
+  }
+
+  &.un_selected {
+    color: $bg-200;
+    &::before {
+      background-color: $bg-200;
+    }
+  }
+}
+
+.tab {
+  .icon {
+    max-width: 100px;
+    transition: 0.5s all;
+  }
+
+  &.un_selected {
+    font-weight: $font-light;
+    color: $bg-500;
+
+    .icon {
+      max-width: 0;
+    }
+    &::before {
+      height: 0;
+    }
+  }
+
+  &:hover {
+    font-weight: $font-bold;
+    color: $bg-700;
+    &::before {
+      height: 23px;
+      background-color: $primary-300;
+    }
+  }
+}

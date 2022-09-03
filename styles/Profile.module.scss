@@ -1,0 +1,200 @@
+@use "styles/variables.scss" as *;
+
+.section_cover_image {
+  padding-top: 0;
+}
+.top_searches {
+  margin-top: 80px;
+}
+
+.group {
+  &_heading {
+    &_one {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      margin-top: -150px;
+      margin-bottom: 30px;
+
+      .name {
+        font-weight: $font-bold;
+        font-size: $text-2xl;
+        margin-bottom: 30px;
+      }
+
+      .avatar {
+        min-width: 220px;
+        max-width: 220px;
+        height: 220px;
+        background-color: $bg-50;
+        border-radius: 50%;
+        margin-right: 30px;
+        background-color: white;
+        z-index: 1;
+        border: 8px solid $bg-50 !important;
+
+        &_img {
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &_two {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 52px;
+
+      .outstanding_criteria {
+        margin-right: 120px;
+
+        &_container {
+          display: flex;
+        }
+
+        h5 {
+          font-size: $text-lg;
+          font-weight: $font-semi-bold;
+        }
+
+        span {
+          font-weight: $font-bold;
+          font-size: $text-lg + 2px;
+          color: $bg-400;
+        }
+      }
+      .btn_edit_profile {
+        flex-basis: auto;
+        font-size: $text-sm;
+      }
+    }
+  }
+}
+
+.complete_profilecard_mobile {
+  display: none;
+}
+
+.profile_tab {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid $bg-100;
+
+  > div {
+    margin-right: 96px;
+  }
+}
+
+@media screen and (max-width: $big-tablet) {
+  .section_profile {
+    &_container {
+      width: 100% !important;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+  .section_user_information {
+    padding-top: 0;
+  }
+  .container_user_information {
+    width: 100% !important;
+  }
+  .user_information {
+    .menu_sidebar {
+      display: none;
+    }
+    .tab_content {
+      width: 100%;
+    }
+  }
+  .group {
+    &_heading {
+      &_one {
+        margin-top: -110px;
+
+        .avatar {
+          min-width: 165px;
+          max-width: 165px;
+          height: 165px;
+        }
+      }
+    }
+  }
+  .profile_tab {
+    > div {
+      margin-right: 60px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .complete_profilecard_mobile {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .group {
+    &_heading {
+      &_one {
+        .complete_profilecard_desktop {
+          display: none;
+        }
+      }
+      &_two {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .profile_tab {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .group {
+    &_heading {
+      &_one {
+        margin-top: -75px;
+        margin-bottom: 16px;
+
+        .name {
+          font-size: $text-md;
+          width: 100%;
+          margin-top: 10px;
+          margin-bottom: 0;
+        }
+
+        .avatar {
+          min-width: 65px;
+          max-width: 65px;
+          height: 65px;
+
+          &_img {
+            border-width: 2px !important;
+          }
+        }
+      }
+      &_two {
+        margin-bottom: 20px;
+
+        .outstanding_criteria {
+          margin-right: 50px;
+
+          h5 {
+            font-size: $text-xs;
+          }
+
+          span {
+            font-size: $text-sm;
+          }
+        }
+      }
+    }
+  }
+  .section_profile {
+    &_container {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+}

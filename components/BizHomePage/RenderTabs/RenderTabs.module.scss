@@ -1,0 +1,71 @@
+@import "styles/variables.scss";
+
+.tab_content_container {
+  background-color: #f6f6f6;
+  border-radius: 8px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .items_container {
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-height: 700px;
+    overflow-y: scroll;
+
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .see_all {
+    border-radius: 0 0 $border-radius $border-radius;
+    background-color: $blue-500;
+    color: white;
+    text-align: center;
+    font-weight: $font-bold;
+    padding: 6px 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $blue-600;
+    }
+  }
+}
+
+.info_card_container {
+  position: relative;
+
+  .delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.517);
+    border-radius: 50%;
+    padding: 6px;
+    cursor: pointer;
+    fill: white;
+    z-index: 1;
+
+    &:hover {
+      fill: $primary-500;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .small_infor_card {
+    width: 140px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .small_infor_card {
+    width: 128px;
+  }
+}

@@ -1,0 +1,72 @@
+@import "styles/variables.scss";
+
+.carousel {
+  position: relative;
+  width: 100%;
+
+  &.special {
+    .slick_slide > div {
+      width: 99% !important;
+    }    
+  }
+
+  .slick_slide > div {
+    display: grid;
+    place-items: center;
+    width: 99%;
+    margin-top: 50px;
+    margin: auto;
+    height: 360px;
+  }
+
+  .btn_prev,
+  .btn_next {
+    z-index: 1;
+    top: 50%;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: $box-shadow;
+  }
+
+  .btn_prev {
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  .btn_next {
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+}
+
+@media screen and (max-width: $big-tablet) {
+  .carousel {
+    .slick_slide > div {
+      width: 85%;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .carousel {
+    .slick_slide > div {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .carousel {
+    width: 95%;
+    .slick_slide > div {
+      width: 100%;
+    }
+  }
+}

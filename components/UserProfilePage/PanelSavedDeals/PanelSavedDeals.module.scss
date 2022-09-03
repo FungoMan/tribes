@@ -1,0 +1,15 @@
+@use "styles/variables.scss" as *;
+
+.save_deals_panel {
+  .total {
+    margin: 25px 0;
+  }
+
+  @media screen and (max-width: $mobile) {
+    .total {
+      font-size: $text-xs;
+      font-weight: $font-semi-bold;
+      margin: 16px 0;
+    }
+  }
+}

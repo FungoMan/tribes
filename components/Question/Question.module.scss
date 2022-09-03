@@ -1,0 +1,27 @@
+@import "styles/variables.scss";
+
+.question_container {
+  gap: 10px;
+  margin: 30px 0 16px 0;
+
+  .question {
+    font-size: $text-md;
+    font-weight: $font-bold;
+  }
+
+  .optional {
+    color: $bg-400;
+    font-size: $text-md;
+  }
+
+  .instruction {
+    color: $bg-600;
+    font-size: $text-xs;
+    font-weight: $font-light;
+  }
+}
+
+.children {
+  font-weight: $font-light;
+  font-size: $text-md;
+}

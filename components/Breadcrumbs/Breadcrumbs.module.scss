@@ -1,0 +1,19 @@
+@use "styles/variables.scss" as *;
+
+.breadcrumb {
+  &s {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  &_item {
+    display: flex;
+    align-items: center;
+    
+    color: $bg-400;
+    font-size: $text-sm;
+    &[aria-current="page"] {
+      color: $bg-500;
+    }
+  }
+}

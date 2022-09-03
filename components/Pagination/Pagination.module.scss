@@ -1,0 +1,35 @@
+@import "styles/variables.scss";
+
+.pagination {
+  gap: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+
+  .page {
+    a {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: $border-radius;
+      cursor: pointer;
+      &:hover {
+        background-color: $bg-100;
+      }
+    }
+  }
+
+  .active {
+    border-radius: $border-radius;
+    background-color: $bg-700;
+    color: white;
+
+    &:hover {
+      color: black;
+    }
+  }
+}

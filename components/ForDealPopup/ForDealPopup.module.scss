@@ -1,0 +1,99 @@
+@import "styles/variables.scss";
+
+.auth_popup {
+  position: relative;
+  max-width: 97%;
+  height: 370px;
+  width: 578px;
+  margin: auto;
+  background-image: url("/images/authPopup.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 100px;
+
+  &::after {
+    content: "Please login/sign up to explore our exclusive deals now";
+    font-weight: $font-bold;
+    font-size: $text-xl;
+    width: 65%;
+    text-align: center;
+    color: white;
+  }
+
+  .close {
+    line-height: 1;
+    cursor: pointer;
+    height: min-content;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 55px;
+    right: 55px;
+    z-index: 4;
+  }
+
+  .button_container {
+    border-radius: $border-radius;
+    width: 80%;
+    padding: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .auth_popup {
+    height: 220px;
+    padding-top: 40px;
+
+    &::after {
+      width: 60%;
+      font-size: $text-md;
+    }
+
+    .close {
+      font-size: 20px;
+      top: 16px;
+      right: 40px;
+      padding: 0 4px;
+    }
+
+    .button_container {
+      gap: 10px;
+      bottom: -4px;
+    }
+  }
+}
+
+@media screen and (max-width: $small-mobile) {
+  .auth_popup {
+    padding-top: 40px;
+    &::after {
+      width: 55%;
+      font-size: $text-md;
+    }
+    .close {
+      top: 40px;
+      right: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: $mini-mobile) {
+  .auth_popup {
+    padding-top: 15px;
+    height: 190px;
+  }
+}

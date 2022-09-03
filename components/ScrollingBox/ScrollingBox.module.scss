@@ -1,0 +1,39 @@
+@use "styles/variables.scss" as *;
+
+.scrollbar_wrapper {
+  padding-right: 12px;
+  padding-bottom: 12px;
+}
+
+.scrolling_box {
+  padding-right: 12px;
+  padding-bottom: 12px;
+  background-clip: padding-box;
+  color: transparent;
+  transition: color 300ms ease;
+  
+  &:hover {
+    color: $bg-200;
+  }
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    border-radius: 16px;
+    box-shadow: inset 0 0 0 20px;
+  }  
+}
+
+@media screen and (max-width: $mobile) {
+  .scrollbar_wrapper {
+    padding: 0;
+  }
+  .scrolling_box {
+    padding: 0;
+    &:hover {
+      color: transparent;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import "styles/variables.scss";
+
+.social_link_container {
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+
+  .icon {
+    position: relative;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: $box-shadow;
+    padding: 6px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .social_link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 20px;
+
+    &_title {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}

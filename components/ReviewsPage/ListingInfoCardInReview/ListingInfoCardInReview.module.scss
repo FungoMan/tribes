@@ -1,0 +1,49 @@
+@use "styles/variables.scss" as *;
+
+.biz_info {
+  display: flex;
+  background-color: $bg-50;
+  border-radius: $border-radius;
+  padding: $p-lg;
+
+  .avatar {
+    min-width: 48px;
+    max-width: 48px;
+    height: 48px;
+    margin-right: 16px;
+    cursor: pointer;
+
+    img {
+      border-radius: 2px;
+    }
+  }
+
+  .title {
+    font-size: $text-sm;
+    font-weight: $font-semi-bold;
+    color: $bg-500;
+    margin-bottom: 4px;
+    cursor: pointer;
+  }
+
+  .group {
+    display: flex;
+    align-items: center;
+    font-size: $text-xs;
+    color: $bg-500;
+    margin-bottom: 5px;
+
+    .rate {
+      color: $primary-500;
+      font-weight: $font-semi-bold;
+    }
+
+    .tag {
+      color: $bg-400;
+
+      &:last-child span:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+}
